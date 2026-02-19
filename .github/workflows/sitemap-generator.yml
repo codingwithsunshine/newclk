@@ -28,7 +28,7 @@ jobs:
           const path = require('path');
 
           // Configuration
-          const BASE_URL = 'https://unlimited-leads.online/';
+          const BASE_URL = 'https://crawl-data.com/';
           const CONTENT_DIR = './';
           const FILE_EXTENSIONS = ['.html', '.md', '.txt'];
           const EXCLUDED_DIRS = ['.git', 'node_modules', '.github'];
