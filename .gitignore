@@ -1,165 +1,36 @@
 # Dependencies
 node_modules/
 package-lock.json
-.translation-log.json
 
-# Legacy pages from old brand (contain webhook URLs and sensitive endpoints)
-legacy_pages/
-
-# Old login/signup/app pages with embedded credentials
-app.html
-app-beta.html
-log-in-beta.html
-login.html
-sign-up.html
-sign-up-beta.html
-signup.html
-account.html
-google-sign-up.html
-extension-login.html
-extension-upgrade.html
-extension-scraping.html
-extension.html
-
-# Auth callback pages with secrets
-auth/
-
-# Confirmation pages with webhook URLs
-confirmation.html
-confirmation_eng.html
-confirmation-login.html
-confirmation-signup.html
-confirmation-upgrade.html
-
-# Old tool pages with embedded API endpoints
-app-apollofinder.html
-apollo-email-finder.html
-apollo-io-extension.html
-apollo-io-price.html
-apollo-leads-list.html
-apolo-io-login.html
-appolo-extension.html
-appolo-io-chrome-extension.html
-email-verifier-app.html
-emailverif-app.html
-emailverifi-betaapp.html
-linkedin-profile-scraper-app.html
-linkedin-scraper-app.html
-linkedin-sales-navigator-scrapper.html
-
-# Utility scripts (may contain sensitive data or internal logic)
-*.py
-*.sh
-*.swp
-config.js
-translate-website.js
-
-# Localized pages (old brand, contain unlimited-leads.online references)
+# Localized/Legacy folders (deleted but keep ignored)
 de/
 es/
 fr/
 it/
 pt/
-
-# Old brand pages
-alternatives.html
-about-us.html
-api-documentation.html
-api.html
-appsumo-redeem.html
-dealfuel-redeem-code.html
-dealify-redeem-code.html
-demo.html
-pricing.html
-pricing-page.html
-new_footer.html
-video.html
-
-# Old tool pages
-bulk-email-finder.html
-bulk-mx-lookup.html
-buy-leads-online.html
-b2b-company-list.html
-b2b-contact-database-provider.html
-b2b-data-purchase.html
-base-demails.html
-chrome-extension.html
-cold-email-generator.html
-company-phone-finder.html
-customer-scoring.html
-data-quality.html
-domain-extractor.html
-email-extractor.html
-email-finder-app.html
-email-name-generator.html
-email-permutator.html
-email-verification.html
-email-des-entreprises.html
-email-list.html
-email-list-of-engineers.html
-email-list-of-interior-designers.html
-email-list-of-small-business-owners.html
-en.html
-features.html
-find-email-from-phone-number.html
-find-mobile-number-by-name-of-person.html
-find-website-from-company-name-in-bulk.html
-free-tools-to-check-if-someone-opened-your-email.html
-gmail-read-confirmation.html
-google-map-scraper.html
-healthcare-types.html
-help.html
-hunter-io-ai-tool.html
-i-look-forward-to-meeting-you.html
-insurance-types.html
-integrations.html
-justdone-ai-is-fake.html
-keyword.html
-leads-magically.html
-legal-notice.html
-linkedin-headline-generator.html
-linkedin-profile-url-finder.html
-linkedin-scraping-guide.html
-lista-de-veterinarios.html
-marketing-directors.html
-mentions_legales.html
-mortgage-types.html
-phone-number-extractor.html
-politique_de_confidentialite.html
-privacy-policy.html
-privacy-policy-extension.html
-push-pull-marketing.html
-recherche-par-adresse-mail.html
-restaurant-types.html
-retail-types.html
-sales-director-types.html
-sales-navigator-tips.html
-sdr-sales.html
-spam-words-checker.html
-spintax-generator.html
-unlimited-email-verifier.html
-vp-sales-types.html
-ai-email-reply-generator-free.html
-ai-email-template-generator.html
-contact.html
-
-# Backup files
-*.backup
-
-# Blog, CDN scripts, JS
+auth/
 blog/
 cdn-cgi/
 csc/
 js/
+legacy_pages/
 
-# Redirects and sitemap (old brand links)
-_redirects
-_redirects.backup
+# Sensitive/Legacy files (deleted but keep ignored)
+*.py
+*.sh
+*.backup
+*.swp
+_redirects*
 sitemap.xml
+config.js
+translate-website.js
+package.json
+
+# Tool results/logs
+results/
+logs/
+.translation-log.json
 
 # OS files
 .DS_Store
 Thumbs.db
-
-# Package files (not needed for static site hosting)
-package.json

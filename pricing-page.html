@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pricing | Crawl Data - Professional Web Scraping</title>
+    <meta name="description"
+        content="Simple, transparent pricing for custom web crawlers and ready-to-use data packs. Start with custom solutions for $299 or ready-to-use data for $29." />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Inter:wght@400;600&display=swap"
+        rel="stylesheet" />
+
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #0ea5e9;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-600: #4b5563;
+            --gray-900: #111827;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #334155;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        header {
+            background: #fff;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .hero {
+            padding: 5rem 0 3rem;
+            text-align: center;
+            background: var(--gray-50);
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .pricing-section {
+            padding: 4rem 0;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .pricing-card {
+            background: #fff;
+            border: 1px solid var(--gray-200);
+            border-radius: 1rem;
+            padding: 3rem 2rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--secondary);
+        }
+
+        .card-tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: var(--gray-100);
+            border-radius: 2rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .card-popular .card-tag {
+            background: var(--secondary);
+            color: white;
+        }
+
+        .price {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin: 1rem 0;
+        }
+
+        .price small {
+            font-size: 1rem;
+            color: var(--gray-600);
+        }
+
+        .features {
+            list-style: none;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .features li {
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .features li i {
+            color: var(--secondary);
+        }
+
+        .btn {
+            display: inline-block;
+            width: 100%;
+            padding: 1rem;
+            background: var(--primary);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            font-weight: 700;
+            transition: opacity 0.2s;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        .btn-secondary {
+            background: var(--secondary);
+        }
+
+        footer {
+            background: var(--primary);
+            color: #fff;
+            padding: 4rem 0 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            margin-left: 1.5rem;
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container header-content">
+            <a href="/" class="logo"><i class="fas fa-bolt"></i> Crawl Data</a>
+            <nav><a href="/" style="text-decoration:none; color:var(--primary); font-weight:600;">Home</a></nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Simple <span style="color:var(--secondary)">Pricing</span></h1>
+            <p>Choose the model that fits your data needs.</p>
+        </div>
+    </section>
+
+    <section class="pricing-section">
+        <div class="container">
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="card-tag">Ready-to-use</div>
+                    <h2>Data Packs</h2>
+                    <div class="price">$29<small>/pack</small></div>
+                    <p>Pre-scraped datasets for instant download.</p>
+                    <ul class="features">
+                        <li><i class="fas fa-check"></i> B2B Lead Databases</li>
+                        <li><i class="fas fa-check"></i> Historic Hotel Pricing</li>
+                        <li><i class="fas fa-check"></i> Rental Market Data</li>
+                        <li><i class="fas fa-check"></i> E-commerce Snapshots</li>
+                    </ul>
+                    <a href="mailto:sales@crawl-data.com" class="btn">Browse Packs</a>
+                </div>
+
+                <div class="pricing-card card-popular">
+                    <div class="card-tag">Most Popular</div>
+                    <h2>Custom Crawlers</h2>
+                    <div class="price">$299<small>/start</small></div>
+                    <p>Production-grade scraping built to your spec.</p>
+                    <ul class="features">
+                        <li><i class="fas fa-check"></i> Any target website</li>
+                        <li><i class="fas fa-check"></i> Anti-blocking included</li>
+                        <li><i class="fas fa-check"></i> CSV/JSON/API delivery</li>
+                        <li><i class="fas fa-check"></i> 30 days maintenance</li>
+                    </ul>
+                    <a href="mailto:sales@crawl-data.com" class="btn btn-secondary">Get a Quote</a>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="card-tag">Enterprise</div>
+                    <h2>Ongoing Feeds</h2>
+                    <div class="price">Custom</div>
+                    <p>Real-time data pipelines at massive scale.</p>
+                    <ul class="features">
+                        <li><i class="fas fa-check"></i> Hourly/Daily updates</li>
+                        <li><i class="fas fa-check"></i> Infinite scalability</li>
+                        <li><i class="fas fa-check"></i> Dedicated engineer</li>
+                        <li><i class="fas fa-check"></i> Priority SLA</li>
+                    </ul>
+                    <a href="mailto:sales@crawl-data.com" class="btn">Talk to Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2025 Crawl Data. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="/privacy-policy">Privacy</a>
+                <a href="/legal-notice">Terms</a>
+                <a href="/about-us">About</a>
+                <a href="mailto:sales@crawl-data.com">Contact</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
