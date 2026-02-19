@@ -1,0 +1,1544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" type="image/png" href="/icon128.png">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crawl Data | Professional Web Scraping & Data Solutions</title>
+    <meta name="description"
+        content="Crawl Data — Custom web crawlers from $299. Ready-to-use data packs from $29: B2B leads, hotel prices, rental data, and e-commerce intelligence at scale." />
+
+    <!-- Preconnect externals -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <!-- Fonts & Styles -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <style>
+        /* Custom scrollbar for premium feel */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-light);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary);
+        }
+
+        :root {
+            --primary: #0f172a;
+            --primary-dark: #020617;
+            --primary-light: #e2e8f0;
+            --secondary: #0ea5e9;
+            --secondary-dark: #0284c7;
+            --accent: #06b6d4;
+            --accent-warm: #f59e0b;
+            --emerald: #10b981;
+            --violet: #8b5cf6;
+            --rose: #f43f5e;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --gray-600: #475569;
+            --gray-700: #334155;
+            --gray-800: #1e293b;
+            --gray-900: #0f172a;
+            --success: #10b981;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --border-radius: 0.75rem;
+            --border-radius-lg: 1.25rem;
+            --box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --box-shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #ffffff;
+            color: var(--gray-800);
+            line-height: 1.7;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.3;
+            font-weight: 800;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .btn {
+            display: inline-block;
+            font-weight: 600;
+            padding: 0.85rem 1.75rem;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            cursor: pointer;
+            text-align: center;
+            border: none;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gray-900), var(--gray-800));
+            color: white;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.3);
+            font-weight: 700;
+            letter-spacing: 0.01em;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(15, 23, 42, 0.4);
+            background: linear-gradient(135deg, var(--gray-800), #0f172a);
+        }
+
+        .btn-accent {
+            background: linear-gradient(135deg, var(--secondary), var(--accent));
+            color: white;
+            box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
+            font-weight: 700;
+        }
+
+        .btn-accent:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(14, 165, 233, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--gray-900);
+            border: 1.5px solid var(--gray-200);
+        }
+
+        .btn-secondary:hover {
+            background: var(--gray-50);
+            border-color: var(--gray-300);
+            transform: translateY(-2px);
+        }
+
+        .btn-large {
+            font-size: 1.1rem;
+            padding: 1.1rem 2.5rem;
+        }
+
+        .section {
+            padding: 6rem 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: var(--gray-900);
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--secondary), var(--accent));
+            margin: 1rem auto 0;
+            border-radius: 4px;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            text-align: center;
+            color: var(--gray-600);
+            max-width: 700px;
+            margin: 0 auto 3rem;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.25rem;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .nav-link {
+            color: var(--gray-700);
+            transition: color 0.2s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--secondary);
+        }
+
+        .nav-link:after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--secondary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover:after {
+            width: 100%;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+        }
+
+        .logo-text {
+            font-size: 1.4rem;
+            font-weight: 800;
+            font-family: 'Montserrat', sans-serif;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--gray-900), var(--secondary));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--gray-900), var(--secondary));
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        /* Top banner */
+        .top-banner {
+            background: linear-gradient(135deg, var(--gray-900), #1e293b);
+            color: white;
+            padding: 0.6rem;
+            text-align: center;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .top-banner span {
+            color: var(--accent-warm);
+            font-weight: 700;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 7rem 0 5rem;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f0f9ff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero:before {
+            content: "";
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(14, 165, 233, 0.08), transparent 70%);
+            top: -200px;
+            right: -200px;
+            z-index: 0;
+        }
+
+        .hero:after {
+            content: "";
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(6, 182, 212, 0.06), transparent 70%);
+            bottom: -100px;
+            left: -100px;
+            z-index: 0;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: white;
+            border: 1px solid var(--gray-200);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--gray-700);
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        .hero-badge i {
+            color: var(--secondary);
+        }
+
+        .hero h1 {
+            font-size: 3.75rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            color: var(--gray-900);
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+        }
+
+        .hero h1 .highlight {
+            background: linear-gradient(135deg, var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            color: var(--gray-600);
+            max-width: 680px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 3.5rem;
+        }
+
+        /* Stats */
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+            background: white;
+            border-radius: var(--border-radius-lg);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+            padding: 2rem;
+            position: relative;
+            z-index: 2;
+            border: 1px solid var(--gray-100);
+        }
+
+        .stat {
+            flex: 1;
+            min-width: 180px;
+            padding: 1.5rem;
+            position: relative;
+        }
+
+        .stat:not(:last-child):after {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 25%;
+            height: 50%;
+            width: 1px;
+            background: var(--gray-200);
+        }
+
+        .stat h3 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--gray-900), var(--secondary));
+            -webkit-background-clip: text;
+            color: transparent;
+            font-weight: 900;
+        }
+
+        .stat p {
+            font-weight: 600;
+            color: var(--gray-600);
+            margin-bottom: 0;
+            font-size: 0.9rem;
+        }
+
+        /* Products section */
+        .products-section {
+            padding: 6rem 0;
+            background: white;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 1.75rem;
+            margin-top: 3rem;
+        }
+
+        .product-card {
+            border: 1px solid var(--gray-200);
+            padding: 2.5rem 2rem;
+            border-radius: var(--border-radius-lg);
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: white;
+            overflow: hidden;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+            border-color: transparent;
+        }
+
+        .product-card .card-accent {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+        }
+
+        .product-card .product-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .product-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: var(--gray-900);
+        }
+
+        .product-card p {
+            color: var(--gray-600);
+            margin-bottom: 1.25rem;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .product-price {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: var(--gray-900);
+        }
+
+        .product-price .from {
+            font-weight: 500;
+            font-size: 0.8rem;
+            color: var(--gray-600);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .card-tag {
+            position: absolute;
+            top: 1.25rem;
+            right: 1.25rem;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 0.3rem 0.75rem;
+            border-radius: 50px;
+            color: white;
+        }
+
+        /* How it works */
+        .how-it-works {
+            background: var(--gray-50);
+            padding: 6rem 0;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .step-card {
+            text-align: center;
+            padding: 2.5rem 2rem;
+            border-radius: var(--border-radius-lg);
+            background: white;
+            box-shadow: var(--box-shadow);
+            position: relative;
+        }
+
+        .step-number {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--gray-900), var(--secondary));
+            color: white;
+            font-weight: 800;
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .step-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+            color: var(--gray-900);
+        }
+
+        .step-card p {
+            color: var(--gray-600);
+            font-size: 0.95rem;
+        }
+
+        /* Why choose us */
+        .why-us {
+            padding: 6rem 0;
+            background: white;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .why-card {
+            padding: 2rem;
+            border-radius: var(--border-radius-lg);
+            border: 1px solid var(--gray-100);
+            transition: var(--transition);
+        }
+
+        .why-card:hover {
+            border-color: var(--gray-200);
+            box-shadow: var(--box-shadow);
+            transform: translateY(-4px);
+        }
+
+        .why-card .why-icon {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .why-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 0.75rem;
+            color: var(--gray-900);
+        }
+
+        .why-card p {
+            color: var(--gray-600);
+            font-size: 0.9rem;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 6rem 0;
+            background: var(--gray-50);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--gray-200);
+            padding: 1.5rem 0;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: var(--gray-900);
+            gap: 1rem;
+        }
+
+        .faq-question:hover {
+            color: var(--secondary);
+        }
+
+        .faq-icon {
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .faq-answer {
+            margin-top: 1rem;
+            color: var(--gray-600);
+            line-height: 1.7;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        /* Testimonials */
+        .testimonials-section {
+            background: white;
+            padding: 6rem 0;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: var(--gray-50);
+            padding: 2.25rem;
+            border-radius: var(--border-radius-lg);
+            border: 1px solid var(--gray-100);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: "\201C";
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 4rem;
+            color: var(--gray-200);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: var(--gray-700);
+            position: relative;
+            z-index: 1;
+            font-size: 0.95rem;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .testimonial-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--gray-900), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .testimonial-info h4 {
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 0.15rem;
+            font-size: 0.95rem;
+        }
+
+        .testimonial-info p {
+            color: var(--gray-600);
+            margin-bottom: 0;
+            font-size: 0.85rem;
+        }
+
+        /* Final CTA Section */
+        .final-cta {
+            background: linear-gradient(135deg, var(--gray-900), #1e293b);
+            color: white;
+            text-align: center;
+            padding: 6rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-cta::before {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(14, 165, 233, 0.15), transparent 70%);
+            top: -200px;
+            right: -100px;
+        }
+
+        .final-cta::after {
+            content: "";
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(6, 182, 212, 0.1), transparent 70%);
+            bottom: -150px;
+            left: -100px;
+        }
+
+        .final-cta-content {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .final-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.25rem;
+            color: white;
+        }
+
+        .final-cta h2:after {
+            display: none;
+        }
+
+        .final-cta p {
+            font-size: 1.15rem;
+            margin-bottom: 2rem;
+            opacity: 0.85;
+            line-height: 1.7;
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--gray-900);
+            font-weight: 700;
+        }
+
+        .btn-white:hover {
+            background: var(--gray-100);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(255, 255, 255, 0.15);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1.5fr repeat(3, 1fr);
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-about p {
+            color: var(--gray-300);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            margin-top: 1rem;
+        }
+
+        .footer-column h4 {
+            color: white;
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.65rem;
+        }
+
+        .footer-links a {
+            color: var(--gray-300);
+            transition: color 0.2s ease;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--gray-300);
+            font-size: 0.85rem;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .footer-bottom-links a {
+            color: var(--gray-300);
+            transition: color 0.2s ease;
+        }
+
+        .footer-bottom-links a:hover {
+            color: white;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .footer-social a {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease, transform 0.3s ease;
+            font-size: 0.85rem;
+        }
+
+        .footer-social a:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+        }
+
+        /* Responsive styles */
+        @media (max-width: 992px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            .section {
+                padding: 4rem 0;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .hero h1 {
+                font-size: 2.75rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .stat h3 {
+                font-size: 2rem;
+            }
+
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+            }
+
+            .logo-link {
+                margin-right: auto;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .cta-group {
+                margin-left: auto;
+            }
+
+            .hero {
+                padding: 5rem 0 4rem;
+            }
+
+            .hero h1 {
+                font-size: 2.25rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.75rem;
+            }
+
+            .hero-cta .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .stats {
+                flex-direction: column;
+                padding: 1.5rem;
+            }
+
+            .stat {
+                padding: 1rem;
+                text-align: center;
+                border-bottom: 1px solid var(--gray-200);
+                margin-bottom: 0.5rem;
+            }
+
+            .stat:last-child {
+                border-bottom: none;
+                margin-bottom: 0;
+            }
+
+            .stat:not(:last-child):after {
+                display: none;
+            }
+
+            .section {
+                padding: 3.5rem 0;
+            }
+
+            .section-title {
+                font-size: 1.75rem;
+            }
+
+            .section-subtitle {
+                font-size: 1rem;
+            }
+
+            .products-grid,
+            .why-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .hero h1 {
+                font-size: 1.85rem;
+            }
+
+            .cta-group .btn {
+                padding: 0.6rem 0.85rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-6px);
+            }
+        }
+
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <!-- Top Banner -->
+    <div class="top-banner">
+        🚀 Custom web crawlers built to your spec — <span>starting at just $299</span>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-content">
+            <a href="/" class="logo-link" style="display:flex;align-items:center;gap:0.5rem;">
+                <div class="logo-icon"><i class="fas fa-spider"></i></div>
+                <span class="logo-text"><span class="gradient-text">Crawl Data</span></span>
+            </a>
+            <nav class="nav-links">
+                <a href="#products" class="nav-link">Products</a>
+                <a href="#how-it-works" class="nav-link">How It Works</a>
+                <a href="#why-us" class="nav-link">Why Us</a>
+                <a href="#faqs" class="nav-link">FAQs</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+            <div class="cta-group">
+                <a href="mailto:sales@crawl-data.com" class="btn btn-primary">Get a Quote</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-badge">
+                <i class="fas fa-bolt"></i> Data scraping infrastructure that just works
+            </div>
+            <h1>Web Scraping,<br><span class="highlight">Done Right.</span></h1>
+            <p>Custom crawlers from $299. Ready-to-use data packs from $29 — B2B leads, hotel prices, rental data,
+                e-commerce intelligence. We scrape it, you scale it.</p>
+
+            <div class="hero-cta">
+                <a href="#products" class="btn btn-accent btn-large">Explore Products</a>
+                <a href="mailto:sales@crawl-data.com" class="btn btn-secondary btn-large">Talk to Us</a>
+            </div>
+
+            <div class="stats">
+                <div class="stat">
+                    <h3>1B+</h3>
+                    <p>Data Points Extracted</p>
+                </div>
+                <div class="stat">
+                    <h3>5</h3>
+                    <p>Product Verticals</p>
+                </div>
+                <div class="stat">
+                    <h3>99.9%</h3>
+                    <p>Uptime SLA</p>
+                </div>
+                <div class="stat">
+                    <h3>$29</h3>
+                    <p>Data Packs From</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products-section">
+        <div class="container">
+            <h2 class="section-title">Our Products</h2>
+            <p class="section-subtitle">Five specialized verticals. One reliable data partner.</p>
+
+            <div class="products-grid">
+                <!-- Custom Crawlers -->
+                <div class="product-card">
+                    <div class="card-accent" style="background: linear-gradient(90deg, #0f172a, #334155);"></div>
+                    <div class="card-tag" style="background: var(--gray-900);">PREMIUM</div>
+                    <div class="product-icon" style="background: linear-gradient(135deg, #0f172a, #334155);">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Custom Crawlers</h3>
+                    <p>Tell us what you need. We build a production-grade web crawler tailored exactly to your
+                        specifications — any website, any data, any format.</p>
+                    <div class="product-price"><span class="from">Starting from</span><br>$299</div>
+                </div>
+
+                <!-- Lead Generation -->
+                <div class="product-card">
+                    <div class="card-accent" style="background: linear-gradient(90deg, #0ea5e9, #06b6d4);"></div>
+                    <div class="card-tag" style="background: var(--secondary);">POPULAR</div>
+                    <div class="product-icon" style="background: linear-gradient(135deg, #0ea5e9, #06b6d4);">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Lead Generation</h3>
+                    <p>Pre-scraped, structured B2B lead databases — company names, contacts, emails, and more. Ready to
+                        download and use immediately.</p>
+                    <div class="product-price"><span class="from">Starting from</span><br>$29</div>
+                </div>
+
+                <!-- Hotel Price Comparison -->
+                <div class="product-card">
+                    <div class="card-accent" style="background: linear-gradient(90deg, #f59e0b, #f97316);"></div>
+                    <div class="card-tag" style="background: #f59e0b;">DATA PACK</div>
+                    <div class="product-icon" style="background: linear-gradient(135deg, #f59e0b, #f97316);">
+                        <i class="fas fa-hotel"></i>
+                    </div>
+                    <h3>Hotel Price Comparison</h3>
+                    <p>Ready-to-use historic hotel pricing data or live aggregation across Booking.com, Expedia,
+                        Hotels.com, and 20+ platforms. Real-time monitoring available.</p>
+                    <div class="product-price"><span class="from">Data packs from</span><br>$29 <span
+                            style="font-size:0.75rem;font-weight:400;color:var(--gray-600);">/ custom quotes for live
+                            feeds</span></div>
+                </div>
+
+                <!-- Rental Price Scraping -->
+                <div class="product-card">
+                    <div class="card-accent" style="background: linear-gradient(90deg, #10b981, #059669);"></div>
+                    <div class="card-tag" style="background: #10b981;">DATA PACK</div>
+                    <div class="product-icon" style="background: linear-gradient(135deg, #10b981, #059669);">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Rental Price Scraping</h3>
+                    <p>Historic and live rental listings, pricing trends, and availability from Airbnb, Zillow, and
+                        other platforms. Ready-to-use datasets or ongoing feeds.</p>
+                    <div class="product-price"><span class="from">Data packs from</span><br>$29 <span
+                            style="font-size:0.75rem;font-weight:400;color:var(--gray-600);">/ custom quotes for live
+                            feeds</span></div>
+                </div>
+
+                <!-- E-commerce Scraping -->
+                <div class="product-card">
+                    <div class="card-accent" style="background: linear-gradient(90deg, #8b5cf6, #7c3aed);"></div>
+                    <div class="card-tag" style="background: #8b5cf6;">DATA PACK</div>
+                    <div class="product-icon" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                    <h3>E-commerce Scraping</h3>
+                    <p>Historic product data, pricing snapshots, reviews, and stock levels from Amazon, eBay, Shopify,
+                        and major marketplaces. Ready-to-use or live feeds.</p>
+                    <div class="product-price"><span class="from">Data packs from</span><br>$29 <span
+                            style="font-size:0.75rem;font-weight:400;color:var(--gray-600);">/ custom quotes for live
+                            feeds</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <p class="section-subtitle">Getting your data is simple. Three steps, zero complexity.</p>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Tell Us What You Need</h3>
+                    <p>Share your requirements — target websites, data fields, output format, and delivery schedule. We
+                        handle the rest.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>We Build & Test</h3>
+                    <p>Our team builds a robust, anti-blocking crawler with proxy rotation, CAPTCHA solving, and
+                        validation built in.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Get Clean Data</h3>
+                    <p>Receive structured, validated data in CSV, JSON, or via API. Automated delivery on the schedule
+                        you choose.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section id="why-us" class="why-us">
+        <div class="container">
+            <h2 class="section-title">Why Choose Crawl Data</h2>
+            <p class="section-subtitle">Infrastructure, reliability, and expertise — at a price that makes sense.</p>
+
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-icon">🛡️</div>
+                    <h3>Anti-Blocking Tech</h3>
+                    <p>Rotating proxies, browser fingerprinting, automatic retries, and CAPTCHA solving — all handled
+                        transparently.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">⚡</div>
+                    <h3>Fast Turnaround</h3>
+                    <p>Custom crawlers delivered in 3-5 business days. Lead databases available for immediate download.
+                    </p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">📊</div>
+                    <h3>Quality Validated</h3>
+                    <p>Every dataset goes through automated QA and manual spot-checks before delivery. 99%+ accuracy
+                        guaranteed.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">🔄</div>
+                    <h3>Flexible Formats</h3>
+                    <p>CSV, JSON, Excel, API delivery, or direct database push — we deliver your data however you need
+                        it.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">💰</div>
+                    <h3>Transparent Pricing</h3>
+                    <p>No hidden fees. Custom crawlers from $299, ready-to-use data packs from $29. Pay only for what
+                        you need.
+                    </p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">🤝</div>
+                    <h3>Dedicated Support</h3>
+                    <p>Direct communication with your dedicated engineer. No ticket systems, no waiting — we respond in
+                        hours.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faqs" class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What is a custom crawler and what does $299 include?</span>
+                        <i class="fas fa-plus faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>A custom crawler is a production-grade web scraping solution built specifically for your
+                            needs. For $299, you get a fully functional crawler targeting one website, delivering
+                            structured data in your preferred format (CSV, JSON, etc.), with anti-blocking technology,
+                            proxy rotation, and initial deployment. More complex projects may cost more — we'll provide
+                            a clear quote upfront.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What do I get with the $29 data packs?</span>
+                        <i class="fas fa-plus faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our $29 data packs are ready-to-use, pre-scraped datasets across all our verticals: B2B lead
+                            databases (company names, emails, phone numbers, job titles), historic hotel pricing data,
+                            rental market snapshots, and e-commerce product/pricing datasets. Each pack is organized by
+                            category, region, or platform. Download instantly — no scraping, no waiting.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How do you handle anti-bot protections?</span>
+                        <i class="fas fa-plus faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We use a combination of residential proxies, browser fingerprint rotation, headless browser
+                            automation, request throttling, and CAPTCHA solving services. Our infrastructure is
+                            constantly updated to handle the latest anti-bot measures from major websites.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Is web scraping legal?</span>
+                        <i class="fas fa-plus faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Web scraping of publicly available data is generally legal. We scrape only public-facing
+                            websites and comply with applicable data protection regulations. We advise clients on best
+                            practices and ensure our methods respect robots.txt and terms of service where required.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How fast can I get my data?</span>
+                        <i class="fas fa-plus faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Ready-to-use data packs (leads, hotel prices, rental data, e-commerce snapshots) are
+                            available for instant download. Custom crawlers are built and delivered within 3-5 business
+                            days for standard projects. For ongoing live data feeds, we set up automated schedules
+                            (hourly, daily, weekly) based on your needs.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What support do you provide?</span>
+                        <i class="fas fa-plus faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You'll have direct access to a dedicated engineer for your project. We offer email support,
+                            and our typical response time is under 4 hours. Custom crawler clients also receive free
+                            maintenance for the first 30 days after delivery.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">What Our Clients Say</h2>
+            <p class="section-subtitle">Trusted by startups, agencies, and enterprises worldwide.</p>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"We needed hotel pricing data from 15 different platforms. Crawl Data
+                        built the entire pipeline in under a week. The data quality is exceptional — it's now the
+                        backbone of our comparison engine."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">MK</div>
+                        <div class="testimonial-info">
+                            <h4>Marco K.</h4>
+                            <p>CTO, TravelStack</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"We started with a $29 lead data pack for cold outreach and booked 12
+                        meetings in the first week. Then we grabbed their e-commerce pricing pack too. Now we use a
+                        custom crawler for ongoing competitor analysis."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">SL</div>
+                        <div class="testimonial-info">
+                            <h4>Sarah L.</h4>
+                            <p>Growth Lead, NovaSphere</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"We tried building our own scrapers — it was a nightmare. Crawl Data
+                        handles all the proxy rotation, anti-blocking, and data validation. We just get clean CSVs
+                        delivered daily."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">JR</div>
+                        <div class="testimonial-info">
+                            <h4>James R.</h4>
+                            <p>Head of Data, RetailIQ</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <div class="final-cta-content">
+                <h2>Ready to Get Your Data?</h2>
+                <p>Whether you need a custom crawler, a lead database, or real-time pricing data — we've got you
+                    covered. Reach out and let's build your data pipeline.</p>
+                <a href="mailto:sales@crawl-data.com" class="btn btn-white btn-large">Get Started →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column footer-about">
+                    <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.5rem;">
+                        <div class="logo-icon"><i class="fas fa-spider"></i></div>
+                        <span class="logo-text" style="color:white;">Crawl Data</span>
+                    </div>
+                    <p>Professional web scraping services for businesses of all sizes. Custom crawlers, lead generation,
+                        price comparison, and more.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Products</h4>
+                    <ul class="footer-links">
+                        <li><a href="#products">Custom Crawlers</a></li>
+                        <li><a href="#products">Lead Generation</a></li>
+                        <li><a href="#products">Hotel Price Comparison</a></li>
+                        <li><a href="#products">Rental Scraping</a></li>
+                        <li><a href="#products">E-commerce Scraping</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:sales@crawl-data.com">Contact Us</a></li>
+                        <li><a href="#faqs">FAQs</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:sales@crawl-data.com">sales@crawl-data.com</a></li>
+                        <li><a href="#">Schedule a Call</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2025 Crawl Data. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle Functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const isActive = faqItem.classList.contains('active');
+
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Simple scroll-reveal animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.product-card, .step-card, .why-card, .testimonial-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+
+</html>

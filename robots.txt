@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://crawl-data.com/sitemap.xml
