@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Us | Crawl Data - B2B Lead Generation</title>
-    <meta name="description" content="Learn about Crawl Data and founder Crawl Data Team's mission to revolutionize B2B lead generation with unlimited access and transparent pricing." />
-    
+    <meta name="description"
+        content="Learn about Crawl Data and founder Crawl Data Team's mission to revolutionize B2B lead generation with unlimited access and transparent pricing." />
+
     <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+
     <style>
         :root {
             --primary: #2563eb;
@@ -30,79 +34,87 @@
             --success: #10b981;
             --border-radius: 0.5rem;
             --border-radius-lg: 1rem;
-            --box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
-            --box-shadow-lg: 0 25px 50px -12px rgba(0,0,0,0.25);
+            --box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --box-shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
             --transition: all 0.3s ease;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background: #ffffff; 
-            color: var(--gray-800); 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #ffffff;
+            color: var(--gray-800);
             line-height: 1.7;
         }
-        
-        h1, h2, h3, h4, h5 {
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
             font-family: 'Montserrat', sans-serif;
             line-height: 1.3;
             font-weight: 700;
         }
-        
-        .container { 
-            max-width: 1200px; 
-            margin: 0 auto; 
-            padding: 0 2rem; 
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
         }
-        
-        .btn { 
-            display: inline-block; 
-            font-weight: 600; 
-            padding: 0.85rem 1.75rem; 
-            border-radius: var(--border-radius); 
-            transition: var(--transition); 
-            cursor: pointer; 
+
+        .btn {
+            display: inline-block;
+            font-weight: 600;
+            padding: 0.85rem 1.75rem;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            cursor: pointer;
             text-align: center;
             border: none;
             text-decoration: none;
         }
-        
-        .btn-primary { 
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark)); 
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             color: white;
             box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
         }
-        
-        .btn-primary:hover { 
-            transform: translateY(-3px); 
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
         }
 
-        .gradient-text { 
-            background: linear-gradient(to right, var(--primary), var(--secondary)); 
-            -webkit-background-clip: text; 
-            color: transparent; 
+        .gradient-text {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            color: transparent;
         }
 
         /* Header */
-        .header { 
-            background: white; 
-            box-shadow: 0 1px 0 rgba(0,0,0,0.08); 
-            padding: 1.25rem 0; 
-            position: sticky; 
-            top: 0; 
-            z-index: 100; 
+        .header {
+            background: white;
+            box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+            padding: 1.25rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
-        
-        .header-content { 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        
-        .logo-text { 
-            font-size: 1.5rem; 
+
+        .logo-text {
+            font-size: 1.5rem;
             font-weight: 800;
             font-family: 'Montserrat', sans-serif;
             text-decoration: none;
@@ -111,7 +123,7 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, rgba(37,99,235,0.05) 0%, rgba(14,165,233,0.05) 100%);
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(14, 165, 233, 0.05) 100%);
             padding: 4rem 0;
             text-align: center;
         }
@@ -305,40 +317,51 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .container { padding: 0 1rem; }
-            
-            .hero h1 { font-size: 2.5rem; }
-            
+            .container {
+                padding: 0 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
             .about-content {
                 grid-template-columns: 1fr;
                 gap: 3rem;
             }
-            
-            .about-text h2 { font-size: 2rem; }
-            
+
+            .about-text h2 {
+                font-size: 2rem;
+            }
+
             .mission-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
-            
+
             .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 2rem;
             }
-            
-            .cta-section h2 { font-size: 2rem; }
+
+            .cta-section h2 {
+                font-size: 2rem;
+            }
         }
 
         @media (max-width: 480px) {
             .stats-grid {
                 grid-template-columns: 1fr;
             }
-            
-            .stat-number { font-size: 2.5rem; }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
         }
     </style>
     <!-- Hreflang tags -->
 </head>
+
 <body>
     <!-- Header -->
     <header class="header">
@@ -354,7 +377,8 @@
     <section class="hero">
         <div class="container">
             <h1>About <span class="gradient-text">Crawl Data</span></h1>
-            <p>Revolutionizing B2B lead generation with unlimited access, transparent pricing, and uncompromising data quality.</p>
+            <p>Revolutionizing B2B lead generation with unlimited access, transparent pricing, and uncompromising data
+                quality.</p>
         </div>
     </section>
 
@@ -364,9 +388,12 @@
             <div class="about-content">
                 <div class="about-text">
                     <h2>Our Story</h2>
-                    <p>Crawl Data was born from a simple frustration: why should businesses be limited by arbitrary credit systems when trying to grow?</p>
-                    <p>After years of experiencing the pain of traditional lead generation tools—unexpected charges, credit limitations, and poor data quality—we decided to build something different.</p>
-                    <p>Our mission is simple: provide unlimited access to high-quality B2B leads with transparent, fixed pricing. No surprises, no limits, just results.</p>
+                    <p>Crawl Data was born from a simple frustration: why should businesses be limited by arbitrary
+                        credit systems when trying to grow?</p>
+                    <p>After years of experiencing the pain of traditional lead generation tools—unexpected charges,
+                        credit limitations, and poor data quality—we decided to build something different.</p>
+                    <p>Our mission is simple: provide unlimited access to high-quality B2B leads with transparent, fixed
+                        pricing. No surprises, no limits, just results.</p>
                 </div>
             </div>
         </div>
@@ -385,21 +412,24 @@
                         <i class="fas fa-infinity"></i>
                     </div>
                     <h3>Unlimited Access</h3>
-                    <p>We believe growth shouldn't be limited by arbitrary credit systems. Pay once, access unlimited verified leads.</p>
+                    <p>We believe growth shouldn't be limited by arbitrary credit systems. Pay once, access unlimited
+                        verified leads.</p>
                 </div>
                 <div class="mission-card">
                     <div class="mission-icon">
                         <i class="fas fa-shield-alt"></i>
                     </div>
                     <h3>Data Quality</h3>
-                    <p>Every contact is verified through our 12-point validation system, ensuring 99% accuracy for your outreach campaigns.</p>
+                    <p>Every contact is verified through our 12-point validation system, ensuring 99% accuracy for your
+                        outreach campaigns.</p>
                 </div>
                 <div class="mission-card">
                     <div class="mission-icon">
                         <i class="fas fa-handshake"></i>
                     </div>
                     <h3>Transparency</h3>
-                    <p>No hidden fees, no surprise charges. Simple, honest pricing that scales with your business needs.</p>
+                    <p>No hidden fees, no surprise charges. Simple, honest pricing that scales with your business needs.
+                    </p>
                 </div>
             </div>
         </div>
@@ -436,133 +466,151 @@
         <div class="container">
             <h2>Ready to Experience Unlimited Lead Generation?</h2>
             <p>Join thousands of businesses who've discovered the power of unlimited B2B leads</p>
-            <a href="/sign-up" class="btn btn-white" style="font-size: 1.1rem; padding: 1rem 2rem;">Start with 250 Free Leads</a>
+            <a href="/sign-up" class="btn btn-white" style="font-size: 1.1rem; padding: 1rem 2rem;">Start with 250 Free
+                Leads</a>
         </div>
     </section>
 
     <!-- Footer -->
 
-<div class="database-links-box" style="max-width:700px;margin:40px auto;padding:24px;background:#f0f9ff;border-left:4px solid #0ea5e9;border-radius:8px;">
-<p style="margin:0 0 16px;font-size:15px;font-weight:600;color:#0c4a6e;">📊 Browse Our Databases:</p>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;">
-<a href="https://crawl-data.com/international-database" style="padding:10px 14px;background:white;border:1px solid #bae6fd;border-radius:6px;text-decoration:none;color:#0369a1;font-size:13px;transition:all 0.2s;display:block;text-align:center;">International</a>
-<a href="https://crawl-data.com/epidemiologist-database" style="padding:10px 14px;background:white;border:1px solid #bae6fd;border-radius:6px;text-decoration:none;color:#0369a1;font-size:13px;transition:all 0.2s;display:block;text-align:center;">Epidemiologist</a>
-<a href="https://crawl-data.com/coo-database" style="padding:10px 14px;background:white;border:1px solid #bae6fd;border-radius:6px;text-decoration:none;color:#0369a1;font-size:13px;transition:all 0.2s;display:block;text-align:center;">Coo</a>
-</div></div>
+    <div class="database-links-box"
+        style="max-width:700px;margin:40px auto;padding:24px;background:#f0f9ff;border-left:4px solid #0ea5e9;border-radius:8px;">
+        <p style="margin:0 0 16px;font-size:15px;font-weight:600;color:#0c4a6e;">📊 Browse Our Databases:</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;">
+            <a href="https://crawl-data.com/international-database"
+                style="padding:10px 14px;background:white;border:1px solid #bae6fd;border-radius:6px;text-decoration:none;color:#0369a1;font-size:13px;transition:all 0.2s;display:block;text-align:center;">International</a>
+            <a href="https://crawl-data.com/epidemiologist-database"
+                style="padding:10px 14px;background:white;border:1px solid #bae6fd;border-radius:6px;text-decoration:none;color:#0369a1;font-size:13px;transition:all 0.2s;display:block;text-align:center;">Epidemiologist</a>
+            <a href="https://crawl-data.com/coo-database"
+                style="padding:10px 14px;background:white;border:1px solid #bae6fd;border-radius:6px;text-decoration:none;color:#0369a1;font-size:13px;transition:all 0.2s;display:block;text-align:center;">Coo</a>
+        </div>
+    </div>
 
-<footer id="contact" class="footer">
-    <div class="container">
-        <div class="footer-content">
-            <!-- Features Section -->
-            <div class="footer-column">
-                <h4>Features</h4>
-                <ul class="footer-links">
-                    <li><a href="https://crawl-data.com/sales-database">Sales Database</a></li>
-                    <li><a href="https://crawl-data.com/b2b-company-list">B2B Company List</a></li>
-                    <li><a href="https://crawl-data.com/b2b-contact-database-provider">B2B Contact Database Provider</a></li>
-                    <li><a href="https://crawl-data.com/buy-leads-online">Buy Leads Online</a></li>
-                    <li><a href="https://crawl-data.com/b2b-data-purchase">B2B Data Purchase</a></li>
-                </ul>
-            </div>
-            
-            <!-- Free Tools Section -->
-            <div class="footer-column">
-                <h4>Free Tools</h4>
-                <ul class="footer-links">
-                    <li><a href="https://crawl-data.com/bulk-email-finder">Bulk email finder</a></li>
-                    <li><a href="https://crawl-data.com/spam-words-checker">Spam word checker</a></li>
-                    <li><a href="https://crawl-data.com/find-email-from-phone-number">Find email from phone number</a></li>
-                    <li><a href="https://crawl-data.com/bulk-mx-lookup">Bulk mx lookup</a></li>
-                    <li><a href="https://crawl-data.com/email-extractor">Email extractor</a></li>
-                    <li><a href="https://crawl-data.com/spintax-generator">Spintax Generator</a></li>
-                    <li><a href="https://crawl-data.com/email-permutator">Email permutator</a></li>
-                    <li><a href="https://crawl-data.com/google-map-scraper.html">Google maps scrapper</a></li>
-                    <li><a href="https://crawl-data.com/apollo-email-finder">Apollo email finder</a></li>
-                    <li><a href="https://crawl-data.com/ai-email-template-generator">AI Email Template Generator</a></li>
-                    <li><a href="https://crawl-data.com/ai-email-reply-generator-free">AI Email Reply Generator</a></li>
-                    <li><a href="https://crawl-data.com/cold-email-generator">Cold Email Generator</a></li>
-                    <li><a href="https://crawl-data.com/email-name-generator">Email Name Generator</a></li>
-                    <li><a href="https://crawl-data.com/linkedin-headline-generator">Linkedin Headline Generator</a></li>
-                    <li><a href="https://crawl-data.com/linkedin-sales-navigator-scrapper">Linkedin Sales Navigator Scrapper</a></li>
-                    <li><a href="https://crawl-data.com/domain-extractor">Domain Extractor</a></li>
-                    <li><a href="https://crawl-data.com/phone-number-extractor">Phone Number Extractor</a></li>
-                    <li><a href="https://crawl-data.com/find-website-from-company-name-in-bulk">Find Website from Company Name in Bulk</a></li>
-                    <li><a href="https://crawl-data.com/linkedin-profile-url-finder">Linkedin profiles url finder</a></li>
-                    <li><a href="https://linkfinderai.com/">LinkFinder AI</a></li>
-                </ul>
-            </div>
-            
-            <!-- Compare Section -->
-            <div class="footer-column">
-                <h4>Compare</h4>
-                <ul class="footer-links">
-                    <li><a href="https://crawl-data.com/lusha-alternative">Lusha Alternative</a></li>
-                    <li><a href="https://crawl-data.com/zoominfo-alternative">ZoomInfo Alternative</a></li>
-                    <li><a href="https://crawl-data.com/apollo-alternative">Apollo Alternative</a></li>
-                    <li><a href="https://crawl-data.com/snov-alternative">Snov Alternative</a></li>
-                    <li><a href="https://crawl-data.com/contact-out-alternative">ContactOut Alternative</a></li>
-                    <li><a href="https://crawl-data.com/rocketreach-alternative">RocketReach Alternative</a></li>
-                    <li><a href="https://crawl-data.com/uplead-alternative">UpLead Alternative</a></li>
-                    <li><a href="https://crawl-data.com/lead411-alternative">Lead411 Alternative</a></li>
-                    <li><a href="https://crawl-data.com/seamless-ai-alternative">Seamless ai Alternative</a></li>
-                    <li><a href="https://crawl-data.com/findthatlead-alternative">Findthatlead alternative</a></li>
-                    <li><a href="https://crawl-data.com/cognism-alternative">Cognism alternative</a></li>
-                    <li><a href="https://crawl-data.com/hunter-io-alternative">Hunter io alternative</a></li>
-                    <li><a href="https://crawl-data.com/getprospect-alternative">Getprospect alternative</a></li>
-                    <li><a href="https://crawl-data.com/alternatives">All Alternatives</a></li>
-                </ul>
-            </div>
-            
-            <!-- Industry Email List Section -->
-            <div class="footer-column">
-                <h4>Industry Email List</h4>
-                <ul class="footer-links">
-                    <li><a href="https://crawl-data.com/business-owner-email-list">Business Owner Email List</a></li>
-                    <li><a href="https://crawl-data.com/attorney-email-list">Attorney Email List</a></li>
-                    <li><a href="https://crawl-data.com/ceo-email-list">CEO Email List</a></li>
-                    <li><a href="https://crawl-data.com/cfo-email-list">CFO Email List</a></li>
-                    <li><a href="https://crawl-data.com/construction-industry-email-list">Construction Industry Email List</a></li>
-                    <li><a href="https://crawl-data.com/hr-email-list">HR Email List</a></li>
-                    <li><a href="https://crawl-data.com/real-estate-agent-email-list">Real Estate Agent Email List</a></li>
-                    <li><a href="https://crawl-data.com/email-list.html">All email lists</a></li>
-                </ul>
-            </div>
-            
-            <!-- Contact Section -->
-            <div class="footer-column">
-                <h4>Contact Us</h4>
-                <ul class="footer-links">
-                    <li><a href="mailto:sales@crawl-data.com">sales@crawl-data.com</a></li>
-                    <li><a href="mailto:sales@crawl-data.com">Request Custom Plan</a></li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="footer-social">
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-            <a href="#"><i class="fab fa-reddit"></i></a>
-        </div>
-        
-        <div class="footer-bottom">
-            <p>© 2025 Crawl Data. All rights reserved.</p>
-            <p>
-                <a href="https://crawl-data.com/privacy-policy">Privacy Policy</a> | 
-                <a href="https://crawl-data.com/legal-notice">Terms of Service</a> |
-                <a href="https://crawl-data.com/about-us">About us</a> 
-            </p>
-        </div>
-    </div>
-</footer>
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Features Section -->
+                <div class="footer-column">
+                    <h4>Features</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://crawl-data.com/sales-database">Sales Database</a></li>
+                        <li><a href="https://crawl-data.com/b2b-company-list">B2B Company List</a></li>
+                        <li><a href="https://crawl-data.com/b2b-contact-database-provider">B2B Contact Database
+                                Provider</a></li>
+                        <li><a href="https://crawl-data.com/buy-leads-online">Buy Leads Online</a></li>
+                        <li><a href="https://crawl-data.com/b2b-data-purchase">B2B Data Purchase</a></li>
+                    </ul>
+                </div>
 
-<!-- Floating Badge -->
-<div class="floating-badge">
-    <div class="floating-badge-icon">
-        <i class="fas fa-gift"></i>
+                <!-- Free Tools Section -->
+                <div class="footer-column">
+                    <h4>Free Tools</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://crawl-data.com/bulk-email-finder">Bulk email finder</a></li>
+                        <li><a href="https://crawl-data.com/spam-words-checker">Spam word checker</a></li>
+                        <li><a href="https://crawl-data.com/find-email-from-phone-number">Find email from phone
+                                number</a></li>
+                        <li><a href="https://crawl-data.com/bulk-mx-lookup">Bulk mx lookup</a></li>
+                        <li><a href="https://crawl-data.com/email-extractor">Email extractor</a></li>
+                        <li><a href="https://crawl-data.com/spintax-generator">Spintax Generator</a></li>
+                        <li><a href="https://crawl-data.com/email-permutator">Email permutator</a></li>
+                        <li><a href="https://crawl-data.com/google-map-scraper.html">Google maps scrapper</a></li>
+                        <li><a href="https://crawl-data.com/apollo-email-finder">Apollo email finder</a></li>
+                        <li><a href="https://crawl-data.com/ai-email-template-generator">AI Email Template Generator</a>
+                        </li>
+                        <li><a href="https://crawl-data.com/ai-email-reply-generator-free">AI Email Reply Generator</a>
+                        </li>
+                        <li><a href="https://crawl-data.com/cold-email-generator">Cold Email Generator</a></li>
+                        <li><a href="https://crawl-data.com/email-name-generator">Email Name Generator</a></li>
+                        <li><a href="https://crawl-data.com/linkedin-headline-generator">Linkedin Headline Generator</a>
+                        </li>
+                        <li><a href="https://crawl-data.com/linkedin-sales-navigator-scrapper">Linkedin Sales Navigator
+                                Scrapper</a></li>
+                        <li><a href="https://crawl-data.com/domain-extractor">Domain Extractor</a></li>
+                        <li><a href="https://crawl-data.com/phone-number-extractor">Phone Number Extractor</a></li>
+                        <li><a href="https://crawl-data.com/find-website-from-company-name-in-bulk">Find Website from
+                                Company Name in Bulk</a></li>
+                        <li><a href="https://crawl-data.com/linkedin-profile-url-finder">Linkedin profiles url
+                                finder</a></li>
+                        <li><a href="https://linkfinderai.com/">LinkFinder AI</a></li>
+                    </ul>
+                </div>
+
+                <!-- Compare Section -->
+                <div class="footer-column">
+                    <h4>Compare</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://crawl-data.com/lusha-alternative">Lusha Alternative</a></li>
+                        <li><a href="https://crawl-data.com/zoominfo-alternative">ZoomInfo Alternative</a></li>
+                        <li><a href="https://crawl-data.com/apollo-alternative">Apollo Alternative</a></li>
+                        <li><a href="https://crawl-data.com/snov-alternative">Snov Alternative</a></li>
+                        <li><a href="https://crawl-data.com/contact-out-alternative">ContactOut Alternative</a></li>
+                        <li><a href="https://crawl-data.com/rocketreach-alternative">RocketReach Alternative</a></li>
+                        <li><a href="https://crawl-data.com/uplead-alternative">UpLead Alternative</a></li>
+                        <li><a href="https://crawl-data.com/lead411-alternative">Lead411 Alternative</a></li>
+                        <li><a href="https://crawl-data.com/seamless-ai-alternative">Seamless ai Alternative</a></li>
+                        <li><a href="https://crawl-data.com/findthatlead-alternative">Findthatlead alternative</a></li>
+                        <li><a href="https://crawl-data.com/cognism-alternative">Cognism alternative</a></li>
+                        <li><a href="https://crawl-data.com/hunter-io-alternative">Hunter io alternative</a></li>
+                        <li><a href="https://crawl-data.com/getprospect-alternative">Getprospect alternative</a></li>
+                        <li><a href="https://crawl-data.com/alternatives">All Alternatives</a></li>
+                    </ul>
+                </div>
+
+                <!-- Industry Email List Section -->
+                <div class="footer-column">
+                    <h4>Industry Email List</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://crawl-data.com/business-owner-email-list">Business Owner Email List</a>
+                        </li>
+                        <li><a href="https://crawl-data.com/attorney-email-list">Attorney Email List</a></li>
+                        <li><a href="https://crawl-data.com/ceo-email-list">CEO Email List</a></li>
+                        <li><a href="https://crawl-data.com/cfo-email-list">CFO Email List</a></li>
+                        <li><a href="https://crawl-data.com/construction-industry-email-list">Construction Industry
+                                Email List</a></li>
+                        <li><a href="https://crawl-data.com/hr-email-list">HR Email List</a></li>
+                        <li><a href="https://crawl-data.com/real-estate-agent-email-list">Real Estate Agent Email
+                                List</a></li>
+                        <li><a href="https://crawl-data.com/email-list.html">All email lists</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Section -->
+                <div class="footer-column">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:sales@crawl-data.com">sales@crawl-data.com</a></li>
+                        <li><a href="mailto:sales@crawl-data.com">Request Custom Plan</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-reddit"></i></a>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2025 Crawl Data. All rights reserved.</p>
+                <p>
+                    <a href="https://crawl-data.com/privacy-policy">Privacy Policy</a> |
+                    <a href="https://crawl-data.com/legal-notice">Terms of Service</a> |
+                    <a href="https://crawl-data.com/about-us">About us</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Badge -->
+    <div class="floating-badge">
+        <div class="floating-badge-icon">
+            <i class="fas fa-gift"></i>
+        </div>
+        <div class="floating-badge-content">
+            <a href="https://crawl-data.com/sign-up" class="btn btn-white">Sign Up Now and Get 250 FREE Leads</a>
+        </div>
     </div>
-    <div class="floating-badge-content">
-        <a href="https://crawl-data.com/sign-up" class="btn btn-white">Sign Up Now and Get 250 FREE Leads</a>
-    </div>
-</div>
 </body>
+
 </html>
