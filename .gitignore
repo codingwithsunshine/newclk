@@ -21,7 +21,7 @@ legacy_pages/
 *.backup
 *.swp
 _redirects*
-sitemap.xml
+
 config.js
 translate-website.js
 package.json
