@@ -1644,7 +1644,7 @@
             try {
                 const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
                 const { error } = await supabase.from('leads').insert([
-                    { name, email, message, source: 'homepage', created_at: new Date().toISOString() }
+                    { name, email, message, source: 'homepage' }
                 ]);
 
                 if (error) throw error;
