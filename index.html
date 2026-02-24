@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <link rel="icon" type="image/jpg" href="/icon.jpg">
+    <link rel="icon" type="image/png" href="/icon128.png">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Crawl Data | Professional Web Scraping & Data Solutions</title>
@@ -1083,7 +1083,8 @@
                 <a href="#how-it-works" class="nav-link">How It Works</a>
                 <a href="#why-us" class="nav-link">Why Us</a>
                 <a href="#faqs" class="nav-link">FAQs</a>
-                <a href="#contact" class="nav-link">Contact</a>
+                <a href="/blog/" class="nav-link">Blog</a>
+                <a href="#contact-form" class="nav-link">Contact</a>
             </nav>
             <div class="cta-group">
                 <a href="mailto:sales@crawl-data.com" class="btn btn-primary">Get a Quote</a>
@@ -1108,7 +1109,7 @@
 
             <div class="stats">
                 <div class="stat">
-                    <h3>1B+</h3>
+                    <h3>1M+</h3>
                     <p>Data Points Extracted</p>
                 </div>
                 <div class="stat">
@@ -1131,7 +1132,7 @@
     <section id="products" class="products-section">
         <div class="container">
             <h2 class="section-title">Our Products</h2>
-            <p class="section-subtitle">Five specialized verticals. One reliable data partner.</p>
+            <p class="section-subtitle">Six specialized verticals. One reliable data partner.</p>
 
             <div class="products-grid">
                 <!-- Custom Crawlers -->
@@ -1203,6 +1204,19 @@
                     <div class="product-price"><span class="from">Data packs from</span><br>$29 <span
                             style="font-size:0.75rem;font-weight:400;color:var(--gray-600);">/ custom quotes for live
                             feeds</span></div>
+                </div>
+
+                <!-- Internet Price Scraping -->
+                <div class="product-card">
+                    <div class="card-accent" style="background: linear-gradient(90deg, #f43f5e, #e11d48);"></div>
+                    <div class="card-tag" style="background: #f43f5e;">NEW</div>
+                    <div class="product-icon" style="background: linear-gradient(135deg, #f43f5e, #e11d48);">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <h3>Internet Price Scraping</h3>
+                    <p>Real-time internet plan pricing and speed data extraction from providers like Spectrum, Starlink,
+                        and more. Monitor competition and market trends effortlessly.</p>
+                    <div class="product-price"><span class="from">Custom solutions</span><br>Get a Quote</div>
                 </div>
             </div>
         </div>
@@ -1419,6 +1433,77 @@
         </div>
     </section> -->
 
+    <!-- Contact / Get in Touch Section with Supabase -->
+    <section id="contact-form" class="section" style="background: var(--gray-50);">
+        <div class="container">
+            <h2 class="section-title">Let's Talk Data</h2>
+            <p class="section-subtitle">Share your project requirements and we'll get back to you within a few hours
+                with a custom quote.</p>
+            <div
+                style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;max-width:960px;margin:0 auto;align-items:start;">
+                <!-- Book-a-call card -->
+                <div
+                    style="background:white;border:1px solid var(--gray-200);border-radius:var(--border-radius-lg);padding:2.5rem;text-align:center;">
+                    <div style="font-size:2.5rem;margin-bottom:1rem;">📅</div>
+                    <h3 style="font-size:1.3rem;margin-bottom:0.75rem;color:var(--gray-900);">Book a Discovery Call</h3>
+                    <p style="color:var(--gray-600);margin-bottom:1.5rem;font-size:0.95rem;">Schedule a free 15-min call
+                        to discuss your data needs directly with our team.</p>
+                    <a href="https://calendly.com/crawl-data" target="_blank" class="btn btn-accent"
+                        style="width:100%;display:block;">
+                        <i class="fas fa-calendar-check" style="margin-right:0.5rem;"></i>Book a Free Call
+                    </a>
+                    <p style="font-size:0.8rem;color:var(--gray-600);margin-top:1rem;">No commitment. 15 minutes. Real
+                        answers.</p>
+                </div>
+                <!-- Contact form -->
+                <div
+                    style="background:white;border:1px solid var(--gray-200);border-radius:var(--border-radius-lg);padding:2.5rem;">
+                    <h3 style="font-size:1.2rem;margin-bottom:1.5rem;color:var(--gray-900);">Send Us a Message</h3>
+                    <form id="leadForm" onsubmit="submitLead(event)">
+                        <div style="margin-bottom:1rem;">
+                            <label
+                                style="display:block;font-weight:600;font-size:0.9rem;margin-bottom:0.4rem;color:var(--gray-700);">Name</label>
+                            <input type="text" id="leadName" required placeholder="Your name"
+                                style="width:100%;padding:0.75rem 1rem;border:1px solid var(--gray-200);border-radius:var(--border-radius);font-family:inherit;font-size:0.95rem;outline:none;transition:border-color 0.2s;"
+                                onfocus="this.style.borderColor='var(--secondary)'"
+                                onblur="this.style.borderColor='var(--gray-200)'">
+                        </div>
+                        <div style="margin-bottom:1rem;">
+                            <label
+                                style="display:block;font-weight:600;font-size:0.9rem;margin-bottom:0.4rem;color:var(--gray-700);">Email</label>
+                            <input type="email" id="leadEmail" required placeholder="your@email.com"
+                                style="width:100%;padding:0.75rem 1rem;border:1px solid var(--gray-200);border-radius:var(--border-radius);font-family:inherit;font-size:0.95rem;outline:none;transition:border-color 0.2s;"
+                                onfocus="this.style.borderColor='var(--secondary)'"
+                                onblur="this.style.borderColor='var(--gray-200)'">
+                        </div>
+                        <div style="margin-bottom:1.5rem;">
+                            <label
+                                style="display:block;font-weight:600;font-size:0.9rem;margin-bottom:0.4rem;color:var(--gray-700);">Message
+                                / Requirements</label>
+                            <textarea id="leadMessage" required
+                                placeholder="Tell us what data you need, what websites you want scraped, and how often..."
+                                rows="4"
+                                style="width:100%;padding:0.75rem 1rem;border:1px solid var(--gray-200);border-radius:var(--border-radius);font-family:inherit;font-size:0.95rem;resize:vertical;outline:none;transition:border-color 0.2s;"
+                                onfocus="this.style.borderColor='var(--secondary)'"
+                                onblur="this.style.borderColor='var(--gray-200)'"></textarea>
+                        </div>
+                        <button type="submit" id="leadSubmitBtn" class="btn btn-primary" style="width:100%;">Send
+                            Message →</button>
+                        <div id="leadFormSuccess"
+                            style="display:none;background:#dcfce7;color:#166534;padding:1rem;border-radius:var(--border-radius);margin-top:1rem;font-weight:600;text-align:center;">
+                            ✅ Message sent! We'll reply within a few hours.
+                        </div>
+                        <div id="leadFormError"
+                            style="display:none;background:#fee2e2;color:#991b1b;padding:1rem;border-radius:var(--border-radius);margin-top:1rem;text-align:center;">
+                            ❌ Failed to send. Please email us directly at <a href="mailto:sales@crawl-data.com"
+                                style="color:#991b1b;font-weight:600;">sales@crawl-data.com</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Final CTA -->
     <section class="final-cta">
         <div class="container">
@@ -1442,11 +1527,6 @@
                     </div>
                     <p>Professional web scraping services for businesses of all sizes. Custom crawlers, lead generation,
                         price comparison, and more.</p>
-                    <div class="footer-social">
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
-                    </div>
                 </div>
 
                 <div class="footer-column">
@@ -1457,6 +1537,7 @@
                         <li><a href="#products">Hotel Price Comparison</a></li>
                         <li><a href="#products">Rental Scraping</a></li>
                         <li><a href="#products">E-commerce Scraping</a></li>
+                        <li><a href="#products">Internet Price Scraping</a></li>
                     </ul>
                 </div>
 
@@ -1474,7 +1555,7 @@
                     <h4>Contact</h4>
                     <ul class="footer-links">
                         <li><a href="mailto:sales@crawl-data.com">sales@crawl-data.com</a></li>
-                        <li><a href="#">Schedule a Call</a></li>
+                        <li><a href="https://calendly.com/crawl-data">Schedule a Call</a></li>
                     </ul>
                 </div>
             </div>
@@ -1538,6 +1619,48 @@
             el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             observer.observe(el);
         });
+    </script>
+
+    <!-- Supabase Lead Form Integration -->
+    <script type="module">
+        import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+
+        const SUPABASE_URL = '%%SUPABASE_URL%%';
+        const SUPABASE_ANON_KEY = '%%SUPABASE_ANON_KEY%%';
+
+        window.submitLead = async function (event) {
+            event.preventDefault();
+            const btn = document.getElementById('leadSubmitBtn');
+            const successEl = document.getElementById('leadFormSuccess');
+            const errorEl = document.getElementById('leadFormError');
+
+            btn.disabled = true;
+            btn.textContent = 'Sending...';
+            successEl.style.display = 'none';
+            errorEl.style.display = 'none';
+
+            const name = document.getElementById('leadName').value.trim();
+            const email = document.getElementById('leadEmail').value.trim();
+            const message = document.getElementById('leadMessage').value.trim();
+
+            try {
+                const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+                const { error } = await supabase.from('leads').insert([
+                    { name, email, message, source: 'homepage', created_at: new Date().toISOString() }
+                ]);
+
+                if (error) throw error;
+
+                successEl.style.display = 'block';
+                document.getElementById('leadForm').reset();
+            } catch (err) {
+                console.error('Lead form submission error:', err);
+                errorEl.style.display = 'block';
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Send Message →';
+            }
+        };
     </script>
 </body>
 

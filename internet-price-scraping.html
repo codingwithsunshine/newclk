@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" type="image/png" href="/icon128.png">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Internet Price Scraping | Extract ISP Pricing & Speed Data | Crawl-Data</title>
+    <meta name="description"
+        content="Scrape real-time internet plan pricing and speed data from ISPs like Spectrum, Starlink, AT&T, Comcast, and more. Custom data feeds starting from $299." />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://crawl-data.com/internet-price-scraping" />
+    <meta property="og:title" content="Internet Price Scraping | ISP Data Extraction | Crawl-Data" />
+    <meta property="og:description"
+        content="Real-time internet plan pricing and speed data from Spectrum, Starlink, AT&T, Comcast and more. Monitor ISP pricing changes and market trends." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <style>
+        :root {
+            --primary: #0f172a;
+            --primary-dark: #020617;
+            --secondary: #0ea5e9;
+            --accent: #06b6d4;
+            --accent-warm: #f59e0b;
+            --rose: #f43f5e;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --gray-600: #475569;
+            --gray-700: #334155;
+            --gray-800: #1e293b;
+            --gray-900: #0f172a;
+            --border-radius: 0.75rem;
+            --border-radius-lg: 1.25rem;
+            --box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fff;
+            color: var(--gray-800);
+            line-height: 1.7;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            line-height: 1.3;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .btn {
+            display: inline-block;
+            font-weight: 600;
+            padding: 0.85rem 1.75rem;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            cursor: pointer;
+            text-align: center;
+            border: none;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gray-900), var(--gray-800));
+            color: white;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(15, 23, 42, 0.4);
+        }
+
+        .btn-accent {
+            background: linear-gradient(135deg, var(--rose), #e11d48);
+            color: white;
+            box-shadow: 0 4px 12px rgba(244, 63, 94, 0.3);
+        }
+
+        .btn-accent:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(244, 63, 94, 0.4);
+        }
+
+        .btn-large {
+            font-size: 1.1rem;
+            padding: 1.1rem 2.5rem;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--gray-900), var(--secondary));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        .logo-text {
+            font-size: 1.4rem;
+            font-weight: 800;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--gray-900), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 7rem 0 5rem;
+            background: linear-gradient(135deg, #fff1f2 0%, #fce7f3 40%, #ede9fe 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero:before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(244, 63, 94, 0.08), transparent 70%);
+            top: -200px;
+            right: -200px;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: white;
+            border: 1px solid var(--gray-200);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--gray-700);
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            color: var(--gray-900);
+            letter-spacing: -0.02em;
+        }
+
+        .hero h1 .highlight {
+            background: linear-gradient(135deg, var(--rose), #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--gray-600);
+            max-width: 680px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* ISP Logos Section */
+        .isp-section {
+            background: white;
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: var(--gray-900);
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--rose), #8b5cf6);
+            margin: 1rem auto 0;
+            border-radius: 4px;
+        }
+
+        .section-subtitle {
+            font-size: 1.15rem;
+            text-align: center;
+            color: var(--gray-600);
+            max-width: 700px;
+            margin: 0 auto 3rem;
+        }
+
+        .isp-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .isp-card {
+            border: 1px solid var(--gray-200);
+            padding: 2rem;
+            border-radius: var(--border-radius-lg);
+            transition: var(--transition);
+            background: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .isp-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            border-color: transparent;
+        }
+
+        .isp-card-top {
+            height: 4px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+
+        .isp-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .isp-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--gray-900);
+        }
+
+        .isp-card p {
+            color: var(--gray-600);
+            font-size: 0.9rem;
+        }
+
+        .data-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            background: var(--gray-100);
+            color: var(--gray-600);
+            padding: 0.25rem 0.6rem;
+            border-radius: 50px;
+            margin: 0.15rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .data-tags {
+            margin-top: 1rem;
+        }
+
+        /* Data points section */
+        .data-section {
+            background: var(--gray-50);
+            padding: 5rem 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: var(--border-radius-lg);
+            border: 1px solid var(--gray-100);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            box-shadow: var(--box-shadow);
+            border-color: var(--gray-200);
+            transform: translateY(-4px);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 0.75rem;
+            color: var(--gray-900);
+        }
+
+        .feature-card p {
+            color: var(--gray-600);
+            font-size: 0.9rem;
+        }
+
+        /* Use cases */
+        .use-cases {
+            background: white;
+            padding: 5rem 0;
+        }
+
+        .use-case-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .use-case-item {
+            padding: 1.75rem;
+            border-radius: var(--border-radius-lg);
+            border: 1px solid var(--gray-200);
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .use-case-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .use-case-item h4 {
+            font-size: 1rem;
+            margin-bottom: 0.35rem;
+            color: var(--gray-900);
+        }
+
+        .use-case-item p {
+            color: var(--gray-600);
+            font-size: 0.875rem;
+        }
+
+        /* Pricing CTA */
+        .pricing-cta {
+            background: linear-gradient(135deg, var(--gray-900), #1e293b);
+            color: white;
+            text-align: center;
+            padding: 5rem 0;
+        }
+
+        .pricing-cta h2 {
+            font-size: 2.25rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .pricing-cta p {
+            font-size: 1.1rem;
+            opacity: 0.85;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--gray-900);
+            font-weight: 700;
+        }
+
+        .btn-white:hover {
+            background: var(--gray-100);
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary);
+            color: white;
+            padding: 3rem 0 2rem;
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #94a3b8;
+            font-size: 0.85rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-bottom a {
+            color: #94a3b8;
+        }
+
+        .footer-bottom a:hover {
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.25rem;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-content">
+            <a href="/" class="logo-link">
+                <div class="logo-icon"><i class="fas fa-spider"></i></div>
+                <span class="logo-text"><span class="gradient-text">Crawl Data</span></span>
+            </a>
+            <a href="mailto:sales@crawl-data.com" class="btn btn-primary">Get a Quote</a>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-badge">
+                <i class="fas fa-wifi" style="color: var(--rose);"></i> Real-time ISP Data Extraction
+            </div>
+            <h1>Internet Price Scraping<br><span class="highlight">At Scale & In Real-Time</span></h1>
+            <p>Monitor internet plan prices, promotional offers, and speed tiers from Spectrum, Starlink, AT&T, Comcast,
+                and 50+ ISPs. Structured data delivered daily, weekly, or on-demand.</p>
+            <div class="hero-cta">
+                <a href="mailto:sales@crawl-data.com" class="btn btn-accent btn-large">Get a Custom Quote</a>
+                <a href="https://calendly.com/crawl-data" class="btn btn-primary btn-large" target="_blank">Book a Free
+                    Call</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ISP Coverage -->
+    <section class="isp-section">
+        <div class="container">
+            <h2 class="section-title">ISPs We Cover</h2>
+            <p class="section-subtitle">We extract structured pricing and speed data from all major internet service
+                providers across the US and internationally.</p>
+
+            <div class="isp-grid">
+                <div class="isp-card">
+                    <div class="isp-card-top" style="background: linear-gradient(90deg, #003DA5, #00A9E0);"></div>
+                    <div class="isp-icon">📡</div>
+                    <h3>Spectrum</h3>
+                    <p>Charter Communications plan pricing, speed tiers, promotional rates, and availability by ZIP
+                        code.</p>
+                    <div class="data-tags">
+                        <span class="data-tag">Plan Prices</span>
+                        <span class="data-tag">Speed (Mbps)</span>
+                        <span class="data-tag">Promo Rates</span>
+                        <span class="data-tag">Contract Terms</span>
+                    </div>
+                </div>
+
+                <div class="isp-card">
+                    <div class="isp-card-top" style="background: linear-gradient(90deg, #CC0000, #FF6600);"></div>
+                    <div class="isp-icon">🛰️</div>
+                    <h3>Starlink</h3>
+                    <p>SpaceX Starlink residential, business, and RV plan pricing, hardware costs, and service
+                        availability data.</p>
+                    <div class="data-tags">
+                        <span class="data-tag">Plan Prices</span>
+                        <span class="data-tag">Hardware Cost</span>
+                        <span class="data-tag">Latency</span>
+                        <span class="data-tag">Availability</span>
+                    </div>
+                </div>
+
+                <div class="isp-card">
+                    <div class="isp-card-top" style="background: linear-gradient(90deg, #00A8E0, #009FDB);"></div>
+                    <div class="isp-icon">🌐</div>
+                    <h3>AT&T</h3>
+                    <p>AT&T Fiber and DSL plan pricing, bundle offers, installation fees, and geographic availability.
+                    </p>
+                    <div class="data-tags">
+                        <span class="data-tag">Fiber Plans</span>
+                        <span class="data-tag">DSL Plans</span>
+                        <span class="data-tag">Bundles</span>
+                        <span class="data-tag">Installation</span>
+                    </div>
+                </div>
+
+                <div class="isp-card">
+                    <div class="isp-card-top" style="background: linear-gradient(90deg, #E31837, #CC0000);"></div>
+                    <div class="isp-icon">📶</div>
+                    <h3>Comcast / Xfinity</h3>
+                    <p>Xfinity internet plans, speed categories, data caps, and promotional pricing across all service
+                        areas.</p>
+                    <div class="data-tags">
+                        <span class="data-tag">Plan Prices</span>
+                        <span class="data-tag">Data Caps</span>
+                        <span class="data-tag">Speed Tiers</span>
+                        <span class="data-tag">Equipment Fees</span>
+                    </div>
+                </div>
+
+                <div class="isp-card">
+                    <div class="isp-card-top" style="background: linear-gradient(90deg, #CD040B, #A0001C);"></div>
+                    <div class="isp-icon">🔌</div>
+                    <h3>Verizon Fios</h3>
+                    <p>Verizon Fios fiber plan pricing, speed tiers, pricing history, and bundle discount data.</p>
+                    <div class="data-tags">
+                        <span class="data-tag">Fiber Plans</span>
+                        <span class="data-tag">Bundles</span>
+                        <span class="data-tag">Discounts</span>
+                        <span class="data-tag">Speed</span>
+                    </div>
+                </div>
+
+                <div class="isp-card">
+                    <div class="isp-card-top" style="background: linear-gradient(90deg, #8b5cf6, #6d28d9);"></div>
+                    <div class="isp-icon">🌍</div>
+                    <h3>50+ Other ISPs</h3>
+                    <p>Cox, CenturyLink / Lumen, Mediacom, T-Mobile Home Internet, Google Fiber, and more. Custom
+                        requests welcome.</p>
+                    <div class="data-tags">
+                        <span class="data-tag">Custom Coverage</span>
+                        <span class="data-tag">Any ISP</span>
+                        <span class="data-tag">Any Region</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data Points We Extract -->
+    <section class="data-section">
+        <div class="container">
+            <h2 class="section-title">What Data We Extract</h2>
+            <p class="section-subtitle">Comprehensive, structured data fields from every ISP — ready for analysis,
+                dashboards, and competitive intelligence.</p>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Pricing Data</h3>
+                    <p>Monthly plan costs, introductory promotional prices, regular prices after promotion, bundle
+                        discounts, and equipment rental fees.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Speed Tiers</h3>
+                    <p>Download and upload speeds (in Mbps/Gbps) for each plan tier. Latency benchmarks and consistency
+                        ratings where available.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📍</div>
+                    <h3>Geographic Availability</h3>
+                    <p>Service availability by ZIP code, state, and city — crucial for market analysis and expansion
+                        research.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📄</div>
+                    <h3>Contract Terms</h3>
+                    <p>Contract length requirements, early termination fees, data caps, throttling policies, and
+                        installation costs.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Historical Pricing Trends</h3>
+                    <p>Track price changes over time. Monitor when ISPs raise prices, run seasonal promos, or introduce
+                        new plan tiers.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔔</div>
+                    <h3>Change Alerts</h3>
+                    <p>Get notified automatically when any ISP changes a plan price, speed tier, or promotional offer.
+                        Stay ahead of the market.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases -->
+    <section class="use-cases">
+        <div class="container">
+            <h2 class="section-title">Who Uses This Data?</h2>
+            <p class="section-subtitle">ISP pricing data is used across multiple industries for competitive research,
+                pricing strategy, and market intelligence.</p>
+
+            <div class="use-case-list">
+                <div class="use-case-item">
+                    <div class="use-case-icon">📱</div>
+                    <div>
+                        <h4>Telecom Competitors</h4>
+                        <p>Monitor rival pricing and react faster to market changes with automated alerts.</p>
+                    </div>
+                </div>
+                <div class="use-case-item">
+                    <div class="use-case-icon">🏠</div>
+                    <div>
+                        <h4>Real Estate Platforms</h4>
+                        <p>Include internet availability and speed data as a property attribute to enhance listings.</p>
+                    </div>
+                </div>
+                <div class="use-case-item">
+                    <div class="use-case-icon">📈</div>
+                    <div>
+                        <h4>Market Research Firms</h4>
+                        <p>Build comprehensive reports on broadband market pricing trends and ISP competitive
+                            positioning.</p>
+                    </div>
+                </div>
+                <div class="use-case-item">
+                    <div class="use-case-icon">🔬</div>
+                    <div>
+                        <h4>Policy Researchers</h4>
+                        <p>Analyze broadband pricing equity, speed vs price ratios, and access gaps across geographies.
+                        </p>
+                    </div>
+                </div>
+                <div class="use-case-item">
+                    <div class="use-case-icon">💼</div>
+                    <div>
+                        <h4>Enterprise Procurement</h4>
+                        <p>Compare business internet plans across providers to make informed purchasing decisions.</p>
+                    </div>
+                </div>
+                <div class="use-case-item">
+                    <div class="use-case-icon">🤖</div>
+                    <div>
+                        <h4>AI / ML Applications</h4>
+                        <p>Use structured ISP pricing datasets to train models for pricing prediction or churn analysis.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing CTA -->
+    <section class="pricing-cta">
+        <div class="container">
+            <h2>Ready to Monitor ISP Prices?</h2>
+            <p>Tell us which providers, regions, and data fields you need. We'll build a custom data pipeline and
+                deliver clean, structured data on your schedule.</p>
+            <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+                <a href="mailto:sales@crawl-data.com" class="btn btn-white btn-large">Get a Custom Quote →</a>
+                <a href="https://calendly.com/crawl-data" target="_blank" class="btn btn-accent btn-large">
+                    <i class="fas fa-calendar-check" style="margin-right:0.5rem;"></i>Book a Call
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:1rem;">
+                <div class="logo-icon"><i class="fas fa-spider"></i></div>
+                <span class="logo-text" style="color:white;">Crawl Data</span>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Crawl Data. All rights reserved.</p>
+                <div style="display:flex;gap:1.5rem;">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <a href="/legal-notice.html">Terms</a>
+                    <a href="/">Home</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
