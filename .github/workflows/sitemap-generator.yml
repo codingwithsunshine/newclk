@@ -21,16 +21,6 @@ jobs:
         with:
           node-version: '16'
 
-      # ── Inject Supabase secrets into index.html ────────────────────────────
-      - name: Inject Supabase credentials
-        env:
-          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
-        run: |
-          sed -i "s|%%SUPABASE_URL%%|${SUPABASE_URL}|g" index.html
-          sed -i "s|%%SUPABASE_ANON_KEY%%|${SUPABASE_ANON_KEY}|g" index.html
-          echo "✅ Supabase credentials injected into index.html"
-
       # ── Generate sitemap ───────────────────────────────────────────────────
       - name: Create sitemap generation script
         run: |
