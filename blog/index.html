@@ -74,6 +74,7 @@
         .header {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
             padding: 1rem 0;
             position: sticky;
@@ -116,6 +117,48 @@
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.25rem;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .nav-link {
+            color: var(--gray-700);
+            transition: color 0.2s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--secondary);
+        }
+
+        .nav-link:after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--secondary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover:after {
+            width: 100%;
+        }
+
+        .nav-link.active {
+            color: var(--secondary);
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
         }
 
         .btn {
@@ -263,6 +306,10 @@
         }
 
         @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
             .blog-hero h1 {
                 font-size: 2rem;
             }
@@ -281,12 +328,17 @@
                 <div class="logo-icon"><i class="fas fa-spider"></i></div>
                 <span class="logo-text"><span class="gradient-text">Crawl Data</span></span>
             </a>
-            <nav style="display:flex;gap:2rem;font-weight:500;font-size:0.95rem;">
-                <a href="/" style="color:var(--gray-700);">Home</a>
-                <a href="/#products" style="color:var(--gray-700);">Products</a>
-                <a href="/blog/" style="color:var(--secondary);">Blog</a>
+            <nav class="nav-links">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/#products" class="nav-link">Products</a>
+                <a href="/#how-it-works" class="nav-link">How It Works</a>
+                <a href="/#why-us" class="nav-link">Why Us</a>
+                <a href="/blog/" class="nav-link active">Blog</a>
+                <a href="/#contact-form" class="nav-link">Contact</a>
             </nav>
-            <a href="mailto:sales@crawl-data.com" class="btn btn-primary">Get a Quote</a>
+            <div class="cta-group">
+                <a href="mailto:sales@crawl-data.com" class="btn btn-primary">Get a Quote</a>
+            </div>
         </div>
     </header>
 
@@ -306,11 +358,11 @@
                 <div class="blog-card-body">
                     <span class="blog-tag" style="background:#fee2e2;color:#991b1b;">ISP Pricing</span>
                     <h2><a href="/blog/how-to-scrape-internet-prices.html" style="color:inherit;">How to Scrape Internet
-                            Service Provider Prices in 2025</a></h2>
+                            Service Provider Prices in 2026</a></h2>
                     <p>A complete guide on extracting pricing and speed data from Spectrum, Starlink, AT&T, Comcast, and
                         other ISPs at scale.</p>
                     <div class="blog-meta">
-                        <span>📅 Feb 2025</span>
+                        <span>📅 Feb 2026</span>
                         <span>⏱ 8 min read</span>
                     </div>
                     <a href="/blog/how-to-scrape-internet-prices.html" class="blog-read-link"
@@ -323,14 +375,16 @@
                 <div class="blog-card-image" style="background: linear-gradient(135deg, #eff6ff, #dbeafe);">🔍</div>
                 <div class="blog-card-body">
                     <span class="blog-tag" style="background:#dbeafe;color:#1d4ed8;">Lead Generation</span>
-                    <h2><a href="#" style="color:inherit;">How to Build a B2B Lead Database with Web Scraping</a></h2>
+                    <h2><a href="/blog/b2b-lead-database-web-scraping.html" style="color:inherit;">How to Build a B2B
+                            Lead Database with Web Scraping</a></h2>
                     <p>Step-by-step guide to creating a high-quality B2B lead database by scraping LinkedIn, Google
                         Maps, and business directories.</p>
                     <div class="blog-meta">
-                        <span>📅 Feb 2025</span>
+                        <span>📅 Feb 2026</span>
                         <span>⏱ 10 min read</span>
                     </div>
-                    <a href="#" class="blog-read-link" style="display:block;margin-top:1rem;">Coming Soon →</a>
+                    <a href="/blog/b2b-lead-database-web-scraping.html" class="blog-read-link"
+                        style="display:block;margin-top:1rem;">Read Article →</a>
                 </div>
             </article>
 
@@ -339,15 +393,17 @@
                 <div class="blog-card-image" style="background: linear-gradient(135deg, #f0fdf4, #dcfce7);">🛒</div>
                 <div class="blog-card-body">
                     <span class="blog-tag" style="background:#dcfce7;color:#166534;">E-commerce</span>
-                    <h2><a href="#" style="color:inherit;">E-commerce Price Monitoring: A Complete Scraping Playbook</a>
+                    <h2><a href="/blog/ecommerce-price-monitoring.html" style="color:inherit;">E-commerce Price
+                            Monitoring: A Complete Scraping Playbook</a>
                     </h2>
                     <p>How to track competitor pricing across Amazon, eBay, and Shopify stores using automated scrapers.
                         Includes anti-bot bypass strategies.</p>
                     <div class="blog-meta">
-                        <span>📅 Mar 2025</span>
+                        <span>📅 Jan 2026</span>
                         <span>⏱ 12 min read</span>
                     </div>
-                    <a href="#" class="blog-read-link" style="display:block;margin-top:1rem;">Coming Soon →</a>
+                    <a href="/blog/ecommerce-price-monitoring.html" class="blog-read-link"
+                        style="display:block;margin-top:1rem;">Read Article →</a>
                 </div>
             </article>
 
@@ -356,14 +412,16 @@
                 <div class="blog-card-image" style="background: linear-gradient(135deg, #fefce8, #fef9c3);">🏨</div>
                 <div class="blog-card-body">
                     <span class="blog-tag" style="background:#fef9c3;color:#854d0e;">Travel & Hotels</span>
-                    <h2><a href="#" style="color:inherit;">Scraping Hotel Prices: Booking.com, Expedia & Beyond</a></h2>
+                    <h2><a href="/blog/scraping-hotel-prices.html" style="color:inherit;">Scraping Hotel Prices:
+                            Booking.com, Expedia & Beyond</a></h2>
                     <p>How travel platforms, price comparison sites, and revenue managers use data scraping to track
                         hotel pricing across platforms.</p>
                     <div class="blog-meta">
-                        <span>📅 Mar 2025</span>
+                        <span>📅 Jan 2026</span>
                         <span>⏱ 9 min read</span>
                     </div>
-                    <a href="#" class="blog-read-link" style="display:block;margin-top:1rem;">Coming Soon →</a>
+                    <a href="/blog/scraping-hotel-prices.html" class="blog-read-link"
+                        style="display:block;margin-top:1rem;">Read Article →</a>
                 </div>
             </article>
 
@@ -372,14 +430,16 @@
                 <div class="blog-card-image" style="background: linear-gradient(135deg, #fdf4ff, #fae8ff);">⚖️</div>
                 <div class="blog-card-body">
                     <span class="blog-tag" style="background:#fae8ff;color:#7e22ce;">Legal</span>
-                    <h2><a href="#" style="color:inherit;">Is Web Scraping Legal in 2025? A Practical Guide</a></h2>
+                    <h2><a href="/blog/is-web-scraping-legal.html" style="color:inherit;">Is Web Scraping Legal in 2026?
+                            A Practical Guide</a></h2>
                     <p>Understanding the legal landscape around web scraping: robots.txt, ToS, GDPR, and the landmark
                         hiQ vs LinkedIn ruling explained clearly.</p>
                     <div class="blog-meta">
-                        <span>📅 Mar 2025</span>
+                        <span>📅 Jan 2026</span>
                         <span>⏱ 7 min read</span>
                     </div>
-                    <a href="#" class="blog-read-link" style="display:block;margin-top:1rem;">Coming Soon →</a>
+                    <a href="/blog/is-web-scraping-legal.html" class="blog-read-link"
+                        style="display:block;margin-top:1rem;">Read Article →</a>
                 </div>
             </article>
 
@@ -388,15 +448,17 @@
                 <div class="blog-card-image" style="background: linear-gradient(135deg, #f0f9ff, #e0f2fe);">🏠</div>
                 <div class="blog-card-body">
                     <span class="blog-tag" style="background:#e0f2fe;color:#075985;">Real Estate</span>
-                    <h2><a href="#" style="color:inherit;">Scraing Rental Listings: Zillow, Airbnb & Apartments.com</a>
+                    <h2><a href="/blog/scraping-rental-listings.html" style="color:inherit;">Scraping Rental Listings:
+                            Zillow, Airbnb & Apartments.com</a>
                     </h2>
                     <p>How real estate professionals and investors use rental price scraping to identify market trends
                         and undervalued neighborhoods.</p>
                     <div class="blog-meta">
-                        <span>📅 Apr 2025</span>
+                        <span>📅 Feb 2026</span>
                         <span>⏱ 11 min read</span>
                     </div>
-                    <a href="#" class="blog-read-link" style="display:block;margin-top:1rem;">Coming Soon →</a>
+                    <a href="/blog/scraping-rental-listings.html" class="blog-read-link"
+                        style="display:block;margin-top:1rem;">Read Article →</a>
                 </div>
             </article>
         </div>
@@ -409,7 +471,7 @@
                 <span class="logo-text" style="color:white;">Crawl Data</span>
             </div>
             <div class="footer-bottom">
-                <p>© 2025 Crawl Data. All rights reserved.</p>
+                <p>© 2026 Crawl Data. All rights reserved.</p>
                 <div style="display:flex;gap:1.5rem;">
                     <a href="/privacy-policy.html">Privacy Policy</a>
                     <a href="/legal-notice.html">Terms</a>

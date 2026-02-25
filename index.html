@@ -1011,6 +1011,15 @@
                 gap: 1rem;
                 text-align: center;
             }
+
+            .contact-grid {
+                grid-template-columns: 1fr !important;
+            }
+
+            .calendly-inline-widget {
+                min-width: 100% !important;
+                height: 500px !important;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1439,7 +1448,7 @@
             <h2 class="section-title">Let's Talk Data</h2>
             <p class="section-subtitle">Share your project requirements and we'll get back to you within a few hours
                 with a custom quote.</p>
-            <div
+            <div class="contact-grid"
                 style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;max-width:960px;margin:0 auto;align-items:start;">
                 <!-- Book-a-call card with Calendly inline widget -->
                 <div
