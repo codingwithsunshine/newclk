@@ -2,54 +2,74 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://crawl-data.com/about-us.html</loc>
-    <lastmod>2026-02-24</lastmod>
+    <lastmod>2026-02-25</lastmod>
+  </url>
+  <url>
+    <loc>https://crawl-data.com/blog/b2b-lead-database-web-scraping.html</loc>
+    <lastmod>2026-02-25</lastmod>
+  </url>
+  <url>
+    <loc>https://crawl-data.com/blog/ecommerce-price-monitoring.html</loc>
+    <lastmod>2026-02-25</lastmod>
   </url>
   <url>
     <loc>https://crawl-data.com/blog/how-to-scrape-internet-prices.html</loc>
-    <lastmod>2026-02-24</lastmod>
+    <lastmod>2026-02-25</lastmod>
   </url>
   <url>
     <loc>https://crawl-data.com/blog/index.html</loc>
-    <lastmod>2026-02-24</lastmod>
+    <lastmod>2026-02-25</lastmod>
+  </url>
+  <url>
+    <loc>https://crawl-data.com/blog/is-web-scraping-legal.html</loc>
+    <lastmod>2026-02-25</lastmod>
+  </url>
+  <url>
+    <loc>https://crawl-data.com/blog/scraping-hotel-prices.html</loc>
+    <lastmod>2026-02-25</lastmod>
+  </url>
+  <url>
+    <loc>https://crawl-data.com/blog/scraping-rental-listings.html</loc>
+    <lastmod>2026-02-25</lastmod>
   </url>
   <url>
     <loc>https://crawl-data.com/domain-extractor.html</loc>
-    <lastmod>2026-02-24</lastmod>
+    <lastmod>2026-02-25</lastmod>
   </url>
   <url>
     <loc>https://crawl-data.com/email-extractor.html</loc>
-    <lastmod>2026-02-24</lastmod>
+    <lastmod>2026-02-25</lastmod>
   </url>
   <url>
     <loc>https://crawl-data.com/google-map-scraper.html</loc>
-    <lastmod>2026-02-24</lastmod>
+    <lastmod>2026-02-25</lastmod>
   </url>
   <url>
     <loc>https://crawl-data.com/index.html</loc>
-    <lastmod>2026-02-24</lastmod>
+    <lastmod>2026-02-25</lastmod>
   </url>
   <url>
     <loc>https://crawl-data.com/internet-price-scraping.html</loc>
-    <lastmod>2026-02-24</lastmod>
+    <lastmod>2026-02-25</lastmod>
   </url>
   <url>
     <loc>https://crawl-data.com/legal-notice.html</loc>
-    <lastmod>2026-02-24</lastmod>
+    <lastmod>2026-02-25</lastmod>
   </url>
   <url>
     <loc>https://crawl-data.com/phone-number-extractor.html</loc>
-    <lastmod>2026-02-24</lastmod>
+    <lastmod>2026-02-25</lastmod>
   </url>
   <url>
     <loc>https://crawl-data.com/pricing-page.html</loc>
-    <lastmod>2026-02-24</lastmod>
+    <lastmod>2026-02-25</lastmod>
   </url>
   <url>
     <loc>https://crawl-data.com/privacy-policy.html</loc>
-    <lastmod>2026-02-24</lastmod>
+    <lastmod>2026-02-25</lastmod>
   </url>
   <url>
     <loc>https://crawl-data.com/robots.txt</loc>
-    <lastmod>2026-02-24</lastmod>
+    <lastmod>2026-02-25</lastmod>
   </url>
 </urlset>
